@@ -39,6 +39,7 @@ namespace InputManager {
 
 			case InputType.JoystickOne:
 
+//				Debug.Log(Input.GetAxisRaw("Horizontal_1").ToString());
 				return Input.GetAxis("Horizontal_1");
 
 			case InputType.JoystickTwo:
@@ -151,7 +152,7 @@ namespace InputManager {
 			}
 		}
 
-		public bool JumpButtonPressed() {
+		public bool ActionButtonPressed() {
 
 			if (!initialised) {
 				Debug.Log("player controls not initialised for player " + this.gameObject.name + ". Try initialising in Awake");
@@ -190,6 +191,10 @@ namespace InputManager {
 				return false;
 
 			}
+		}
+
+		public bool JumpButtonPressed () {
+			return false;
 		}
 	}
 }
