@@ -43,7 +43,9 @@ namespace Player {
 			inventory = null;
 
 			Grid g = GameObject.FindObjectOfType<Grid> ();
-			currentTile = g.closestTo (transform.position);
+			if (g != null) {
+				currentTile = g.closestTo (transform.position);
+			}
 		}
 
 		public bool forcedMove {
