@@ -24,6 +24,8 @@ namespace InputManager {
 			initialised = true;
 
 			this.GetComponent<PlayerController>().Activate(this);
+
+			Debug.Log(name + " initialised with control " + _inputType.ToString());
 		}
 
 		public float GetXAxis() 

@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using Player;
 
 namespace InputManager {
@@ -12,9 +13,12 @@ namespace InputManager {
 
 		//The canvas which holds the choises
 		public GameObject selectionPanel;
-
+		public Dropdown ddPlayer1, ddPlayer2, ddPlayer3;
+		public Text startButton;
 
 		void Awake() {
+			selectionPanel.SetActive(true);
+
 			//Find all the players in the scene
 			UpdatePlayers();
 
@@ -22,6 +26,12 @@ namespace InputManager {
 			UpdateAvailableInput();
 
 			Debug.Log(numberOfJoysticksConnected.ToString() + " controllers connected");
+
+			//Refresh dropdown list
+			ddPlayer1.ClearOptions();
+			ddPlayer2.ClearOptions();
+			ddPlayer3.ClearOptions();
+			UpdateDropDowns();
 		}
 
 		//Update available input list
@@ -50,7 +60,27 @@ namespace InputManager {
 			availableInputs.Add(InputType.WASDSpace);
 
 			Debug.Log("amount of available inputs: " + availableInputs.Count.ToString());
+//			NotSelectedInputs = new List<InputType>(availableInputs);
 		}
+
+		void UpdateDropDowns () {
+
+			List<string> names = new List<string>();
+
+			foreach (InputType type in availableInputs) {
+				names.Add(type.ToString());
+			}
+
+			ddPlayer1.AddOptions(names);
+			ddPlayer2.AddOptions(names);
+			ddPlayer3.AddOptions(names);
+
+			ddPlayer1.value = 0;
+			ddPlayer2.value = 1;
+			ddPlayer3.value = 2;
+		}
+
+
 
 		//Update available players list
 		void UpdatePlayers () {
@@ -67,13 +97,36 @@ namespace InputManager {
 			Debug.Log(players.Count.ToString() + " players active");
 		}
 
-		//TODO: Set inputType for the active players
+		public void StartGame() 
+		{
+			if (ddPlayer1.value != ddPlayer2.value && ddPlayer2.value != ddPlayer3.value && ddPlayer3.value != ddPlayer1.value) {
 
+				for (int i = 0; i <= players.Count - 1; i++) {
+					
+					switch (i) {
 
+					case 0:
+						players[0].Init(availableInputs[ddPlayer1.value]);
+						break;
+					case 1:
+						players[1].Init(availableInputs[ddPlayer2.value]);
+						break;
+					case 2:
+						players[2].Init(availableInputs[ddPlayer3.value]);
+						break;
+					default:
+						Debug.Log("Error");
+						break;
 
-		public void StartGame() {
-			selectionPanel.SetActive(false);
-			GameManagerSingleton.sharedInstance.StartGame();
+					}
+
+				}
+
+				selectionPanel.SetActive(false);
+				GameManagerSingleton.sharedInstance.StartGame();
+			} else {
+				startButton.text = "Please select different controls";
+			}
 		}
 	}
 }

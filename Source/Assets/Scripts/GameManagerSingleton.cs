@@ -28,12 +28,17 @@ public class GameManagerSingleton : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		//Find is very slow.. 
-		timerText = GameObject.Find("TimerText").GetComponent<Text>();
+		if (timerText == null) {
+			//Find is very slow.. 
+			timerText = GameObject.Find("TimerText").GetComponent<Text>();
+		}
+
+		timerText.gameObject.SetActive(false);
 	}
 
 	public void StartGame () {
 		//Game has started
+		timerText.gameObject.SetActive(true);
 		started = true;
 	}
 	
