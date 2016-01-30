@@ -3,19 +3,19 @@ using System.Collections;
 
 public class DoorLight : MonoBehaviour {
 
-	public static float maxDist = 1.0f;
-	public static float minIntensity = 0.0f;
-	public static float maxIntensity = 3.76f;
+	public static float maxDist = 1.5f;
+	public static float minIntensity = 0.5f;
+	public static float maxIntensity = 5f;
 
 	new public Light light;
 	public Door door;
 
-	void OnAwake(){
+	void Awake(){
 		// Look sideways for door
 		door = gameObject.GetComponent <Door> ();
 		// Look down for light
 		light = gameObject.GetComponentInChildren <Light> ();
-
+		light.enabled = false;
 
 	}
 
@@ -24,9 +24,10 @@ public class DoorLight : MonoBehaviour {
 
 		if (dontLight) {
 			otherLight.light.intensity = 0; 
-			otherLight.enabled = false;
+			otherLight.light.enabled = false;
 		} else {
-			float intensity = Mathf.Clamp (distance, 0.0f, maxDist);
+			otherLight.light.enabled = true;
+			float intensity = maxDist - Mathf.Clamp (distance, 0.0f, maxDist);
 			intensity = (intensity * (maxIntensity - minIntensity)) + minIntensity;
 			otherLight.light.intensity = intensity;
 		}

@@ -5,19 +5,19 @@ using Player;
 
 public class Torch : MonoBehaviour {
 
-	Light light;
+	new Light light;
 	//public Tile currentTile;
 	public PlayerController playerChacter;
 	// Use this for initialization
 
-	void OnAwake () {
-		playerChacter = GetComponent<PlayerController> ();
+	void Awake () {
+		playerChacter = gameObject.GetComponent<PlayerController> ();
 		light = GetComponentInChildren<Light> ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (playerChacter.currentTile != null) {
+		if (playerChacter!=null && playerChacter.currentTile != null) {
 			foreach (Door d in playerChacter.currentTile.doors) {
 				d.doorLight.setLight (Vector3.Distance (transform.position, d.transform.position));
 			}

@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using Player;
 using InputManager;
@@ -8,9 +8,12 @@ namespace Player {
 	[RequireComponent (typeof (InputController))]
 	public class PlayerController : MonoBehaviour {
 
+<<<<<<< HEAD
 		public Tile currentTile;
 
+=======
 		[HideInInspector]
+>>>>>>> 8440bb5f49d0d9d8b6ce7aceb0ada1c66087f0d8
 		public int player = 1;
 
 		public float speed = 1.0f;
@@ -36,9 +39,6 @@ namespace Player {
 		void Start () {
 			_rigidbody = GetComponent<Rigidbody>();
 			inventory = null;
-
-			Grid g = GameObject.FindObjectOfType<Grid> ();
-			currentTile = g.closestTo (transform.position);
 		}
 
 		public bool forcedMove {

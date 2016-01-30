@@ -28,6 +28,7 @@ public class Door : MonoBehaviour {
 
 
 	public void Awake(){
+		doorLight = gameObject.GetComponent <DoorLight>();
 		// Link tile in parent to door
 		tile = transform.GetComponentInParent<Tile> ();
 
@@ -62,7 +63,11 @@ public class Door : MonoBehaviour {
 				PortalActivated.Invoke ();
 
 				other.transform.position = linked.transform.position;
+				foreach (Door d in allDoors) {
+					d.doorLight.setLight (0.0f, true);
+				}
 				pc.currentTile = linked.tile;
+
 
 				TransformAnimations.animatePlayer (pc, linked.transform.position, linked.landingPosition.position);
 			} else {

@@ -10,7 +10,11 @@ namespace LevelGrid{
 
 		// Use this for initialization
 		void Start () {
+		}
+
+		void Awake(){
 			buildGrid ();
+
 		}
 
 		/// <summary>
@@ -67,6 +71,23 @@ namespace LevelGrid{
 				t.indexZ = iZ;
 
 			}
+		}
+		public Tile closestTo (Vector3 pos){
+			Vector3 multVect = new Vector3 (1,0,1);
+			float minDist = float.MaxValue;
+			Tile closestTile = null;
+			foreach (Tile[] tg in tileGrid) {
+				foreach (Tile t in tg) {
+					if (t != null) {
+						float dist = Vector3.Distance (pos.quickScale(multVect), t.transform.position.quickScale(multVect));
+						if (dist < minDist) {
+							minDist = dist;
+							closestTile = t;
+						}
+					}
+				}
+			}
+			return closestTile;
 		}
 	}
 }
