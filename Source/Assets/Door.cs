@@ -7,6 +7,7 @@ using UnityEngine.Events;
 
 public class Door : MonoBehaviour {
 	public Door linked;
+	public DoorLight doorLight;
 
 	public Transform landingPosition;
 
@@ -29,6 +30,8 @@ public class Door : MonoBehaviour {
 	public void Awake(){
 		// Link tile in parent to door
 		tile = transform.GetComponentInParent<Tile> ();
+
+		tile.doors.Add (this);
 
 		// Build list of all doors
 		allDoors.Add (this);
@@ -59,12 +62,9 @@ public class Door : MonoBehaviour {
 				PortalActivated.Invoke ();
 
 				other.transform.position = linked.transform.position;
+				pc.currentTile = linked.tile;
+
 				TransformAnimations.animatePlayer (pc, linked.transform.position, linked.landingPosition.position);
-				//Vector3 velocity = linked.landingPosition.position - linked.transform.position;
-				//velocity = velocity.normalized * 100.0f;
-				//other.attachedRigidbody.velocity = velocity;
-				//other.attachedRigidbody.AddForce(velocity);
-				//pc.forcedMove = true;
 			} else {
 				pc.justEnteredDoor = false;
 			}

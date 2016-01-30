@@ -2,9 +2,12 @@
 using System.Collections;
 using Player;
 using InputManager;
+using LevelGrid;
 
 namespace Player {
 	public class PlayerController : InputController {
+
+		public Tile currentTile;
 
 		public int player = 1;
 		public float speed = 1.0f;

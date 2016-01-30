@@ -26,7 +26,7 @@ Material:
         first:
           name: _BumpMap
         second:
-          m_Texture: {fileID: 2800000, guid: 4950e07fd40cc433080e688255a508fa, type: 3}
+          m_Texture: {fileID: 2800000, guid: 9aa49a6ddf3ce4beaa62ff5f00ca041a, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -102,11 +102,11 @@ Material:
       data:
         first:
           name: _Glossiness
-        second: 0
+        second: 0.1
       data:
         first:
           name: _BumpScale
-        second: 0.38
+        second: 0.16
       data:
         first:
           name: _OcclusionStrength
@@ -126,7 +126,7 @@ Material:
       data:
         first:
           name: _Metallic
-        second: 0.05
+        second: 0.12
     m_Colors:
       data:
         first:
