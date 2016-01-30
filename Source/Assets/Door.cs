@@ -14,6 +14,7 @@ public class Door : MonoBehaviour {
 	public static List<Door> allDoors = new List<Door>();
 
 	public void Start(){
+		// Randomly link all portals
 		if (canRandomLink && linked == null) {
 			randomLink (this);
 		}
@@ -53,25 +54,32 @@ public class Door : MonoBehaviour {
 	/// </summary>
 	/// <param name="tp">Tp.</param>
 	public static void randomLink (Door tp){
+		// If there are two canidates left, just link them. No biggie if they are in the same room.
 		if (canidates.Count () == 2) {
 			tp.linked = canidates [0] == tp ? canidates [1] : canidates [0];
 		} else {
-			
+			// Using Linq, check the following:
 			List<Door> newCanidates = canidates
-			.Where (a => a != tp)
-			.Where (d => d.tile != tp.tile)
-			.Where (e => !e.tile.linkedTiles.Contains (tp.tile)).ToList ();
-			tp.linked = newCanidates.ElementAt (r.Next (0, newCanidates.Count ()));
+				.Where (a => a != tp) // Don't link with yourself
+				.Where (d => d.tile != tp.tile) // Don't link in the same tile
+				.Where (e => !e.tile.linkedTiles.Contains (tp.tile)).ToList (); // Don't link with a previously linked to tile
+			tp.linked = newCanidates.ElementAt (r.Next (0, newCanidates.Count ())); // Select a random index of the collection
 		}
+		// Link door to door
 		tp.linked.linked = tp;
 
+		// Set up tile refrences
 		tp.tile.linkedTiles.Add (tp.linked.tile);
 		tp.linked.tile.linkedTiles.Add (tp.tile);
+
+		// Debug line that represent a link
 		Debug.DrawLine (tp.transform.position, tp.linked.transform.position, Color.red, float.MaxValue);
 
+		// Remove from canidates
 		canidates.Remove (tp);
 		canidates.Remove (tp.linked);
 	}
 
+	// Canidates for door matching
 	private static List<Door> canidates = new List<Door>();
 }
