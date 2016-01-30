@@ -62,7 +62,7 @@ namespace InputManager {
 			numberOfJoysticksConnected = 0;
 			availableInputs = new List<InputType>();
 
-			for(; Input.GetJoystickNames().Length < numberOfJoysticksConnected; numberOfJoysticksConnected++) {
+			for(; numberOfJoysticksConnected + 1 <= Input.GetJoystickNames().Length; numberOfJoysticksConnected++) {
 
 				switch (numberOfJoysticksConnected) {
 				case 0: availableInputs.Add(InputType.JoystickOne);

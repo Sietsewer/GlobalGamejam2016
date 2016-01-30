@@ -162,15 +162,15 @@ namespace InputManager {
 
 			case InputType.JoystickOne:
 
-				return Input.GetKey("Jump_1");
+				return Input.GetButtonDown("Jump_1");
 
 			case InputType.JoystickTwo:
 
-				return Input.GetKey("Jump_2");
+				return Input.GetButtonDown("Jump_2");
 
 			case InputType.JoystickThree:
 
-				return Input.GetKey("Jump_3");
+				return Input.GetButtonDown("Jump_3");
 
 			case InputType.WASDSpace:
 
