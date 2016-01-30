@@ -32,20 +32,20 @@ namespace LevelGrid{
 
 			// Grab grid max values
 			int maxX = (int)Mathf.Round(tilesInScene.Max (x => x.transform.position.x));
-			int maxY = (int)Mathf.Round(tilesInScene.Max (y => y.transform.position.y));
+			int maxZ = (int)Mathf.Round(tilesInScene.Max (z => z.transform.position.z));
 
 			// Grab grid min values
 			int minX = (int)Mathf.Round(tilesInScene.Min (x => x.transform.position.x));
-			int minY = (int)Mathf.Round(tilesInScene.Min (y => y.transform.position.y));
+			int minZ = (int)Mathf.Round(tilesInScene.Min (z => z.transform.position.z));
 
 			// Calculate lengths arrays should be
 			int lengthX = (int)Mathf.Abs (maxX - minX) + 1;
-			int lengthY = (int)Mathf.Abs (maxY - minY) + 1;
+			int lengthZ = (int)Mathf.Abs (maxZ - minZ) + 1;
 
 			// Dimension the grid
 			tileGrid = new Tile[lengthX] [];
 			for (int i = 0; i < tileGrid.Length; i++) {
-				tileGrid [i] = new Tile[lengthY];
+				tileGrid [i] = new Tile[lengthZ];
 			}
 
 			// Iterate over all tiles in scene to:
@@ -59,20 +59,20 @@ namespace LevelGrid{
 
 				// Determine indeces of tile
 				int iX = (int)t.transform.position.x - minX;
-				int iY = (int)t.transform.position.y - minY;
+				int iZ = (int)t.transform.position.z - minZ;
 
 				// Check if cell hasn't been assigned yet
-				if (tileGrid [iX] [iY] != null) {
+				if (tileGrid [iX] [iZ] != null) {
 					// Destroy GameObject if it already exists
-					GameObject.Destroy (tileGrid [iX] [iY].gameObject);
+					GameObject.Destroy (tileGrid [iX] [iZ].gameObject);
 				}
 
 				// Fill TileGrid with... tiles
-				tileGrid [iX] [iY] = t;
+				tileGrid [iX] [iZ] = t;
 
 				// Assign indeces to tile
 				t.indexX = iX;
-				t.indexY = iY;
+				t.indexZ = iZ;
 
 			}
 		}

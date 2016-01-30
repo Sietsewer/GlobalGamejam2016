@@ -16,6 +16,10 @@ namespace LevelGrid {
 		public Tile SouthWest;
 
 		public int indexX = int.MaxValue;
-		public int indexY = int.MaxValue;
+		public int indexZ = int.MaxValue;
+
+		public void init (Grid g){
+			
+		}
 	}
 }
