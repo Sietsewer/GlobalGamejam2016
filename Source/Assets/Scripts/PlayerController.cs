@@ -56,7 +56,15 @@ namespace Player {
 				//Store collectible in inventory and destroy the world object
 				if (inventory == null) {
 					inventory = other.gameObject;
-					other.gameObject.SetActive(false);
+					other.gameObject.SetActive( false );
+				}
+				break;
+			case "altar":
+				//check if there is collectible to deliver
+				if (inventory != null) {
+					//TODO: Trigger point event
+					Destroy( inventory );
+					Debug.Log("Collectible delivered");
 				}
 				break;
 			}
