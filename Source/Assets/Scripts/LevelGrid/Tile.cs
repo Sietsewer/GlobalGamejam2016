@@ -18,6 +18,8 @@ namespace LevelGrid {
 		public Tile NorthWest;
 		public Tile SouthWest;
 
+		public List <Door> doors = new List<Door>();
+
 		public int indexX = int.MaxValue;
 		public int indexZ = int.MaxValue;
 
