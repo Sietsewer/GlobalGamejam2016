@@ -43,7 +43,9 @@ namespace Player {
 			inventory = null;
 
 			Grid g = GameObject.FindObjectOfType<Grid> ();
-			currentTile = g.closestTo (transform.position);
+			if (g != null) {
+				currentTile = g.closestTo (transform.position);
+			}
 		}
 
 		public bool forcedMove {
@@ -66,9 +68,9 @@ namespace Player {
 				_animator.SetFloat("Forward", Mathf.Clamp( Mathf.Abs( xAxis ) + Mathf.Abs( yAxis ), 0, 1));
 
 				if (xAxis < 0) {
-					transform.localRotation = Quaternion.Euler(0, 0, 0);
+					transform.localRotation = Quaternion.Euler(0, -135, 0);
 				} else {
-					transform.localRotation = Quaternion.Euler(0, 180, 0);
+					transform.localRotation = Quaternion.Euler(0, 45, 0);
 				}
 
 				//player jumping
