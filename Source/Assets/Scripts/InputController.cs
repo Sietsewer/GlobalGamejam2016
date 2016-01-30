@@ -39,6 +39,7 @@ namespace InputManager {
 
 			case InputType.JoystickOne:
 
+//				Debug.Log(Input.GetAxisRaw("Horizontal_1").ToString());
 				return Input.GetAxis("Horizontal_1");
 
 			case InputType.JoystickTwo:
