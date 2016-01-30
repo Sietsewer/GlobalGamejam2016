@@ -64,6 +64,7 @@ namespace Player {
 				if (inventory != null) {
 					//TODO: Trigger point event
 					Destroy( inventory );
+					inventory = null;
 					Debug.Log("Collectible delivered");
 				}
 				break;
