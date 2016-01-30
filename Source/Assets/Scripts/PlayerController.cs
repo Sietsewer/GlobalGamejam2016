@@ -22,21 +22,26 @@ namespace Player {
 
 			base.Init();
 		}
-		
+
+		public bool forcedMove {
+			get;
+			private set;
+		}
+
 		// Update is called once per frame
 		void Update () {
-		
-			//player movement
-			transform.Translate( GetXAxis(player) * Time.deltaTime * speed, 0, GetYAxis(player) * Time.deltaTime * speed);
-
-			//player jumping
-			if (JumpButtonPressed(player)) {
-				if (!_jumping) {
-					Debug.Log("Player " + player.ToString() + " jump");
-					Jump();
+			if (!forcedMove) {
+				//player movement
+				//transform.Translate (GetXAxis (player) * Time.deltaTime * speed, 0, GetYAxis (player) * Time.deltaTime * speed);
+				_rigidbody.velocity = Quaternion.Euler(0,45,0) * new Vector3(GetXAxis (player)  * speed, 0, GetYAxis (player) * speed);
+				//player jumping
+				if (JumpButtonPressed (player)) {
+					if (!_jumping) {
+						Debug.Log ("Player " + player.ToString () + " jump");
+						Jump ();
+					}
 				}
 			}
-
 		}
 
 		void Jump() {
@@ -70,6 +75,16 @@ namespace Player {
 					Debug.Log("Collectible delivered");
 				}
 				break;
+			}
+		}
+
+		IEnumerator forcedMove_co (Vector3 begin, Vector3 end){
+			Vector3 velocity = Vector3.zero;
+			float smoothTime = Vector3.Distance (begin, end) * speed;
+			float currentDistance = Vector3.Distance (transform.position, end);
+			while (currentDistance > 0.05f){
+				Vector3.SmoothDamp (transform.position, end, ref velocity, smoothTime);
+				yield return null;
 			}
 		}
 	}
