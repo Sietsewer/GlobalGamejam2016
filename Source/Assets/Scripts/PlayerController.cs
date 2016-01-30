@@ -19,6 +19,8 @@ namespace Player {
 		void Start () {
 			_rigidbody = GetComponent<Rigidbody>();
 			inventory = null;
+
+			base.Init();
 		}
 		
 		// Update is called once per frame
