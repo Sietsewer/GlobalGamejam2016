@@ -218,6 +218,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &312970849 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 158930, guid: 27769ca4d2c12428cac46b3be8ab3f58, type: 2}
+  m_PrefabInternal: {fileID: 1625153791}
+--- !u!114 &312970850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 312970849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d9d9c9c7e192432ab564e9173f18c8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &617343983
 Prefab:
   m_ObjectHideFlags: 0
@@ -310,6 +325,21 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fdb412a7d8ba147819d9b9e878820b92, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &779564217 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 142252, guid: fdb412a7d8ba147819d9b9e878820b92, type: 2}
+  m_PrefabInternal: {fileID: 752138172}
+--- !u!114 &779564218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 779564217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d9d9c9c7e192432ab564e9173f18c8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &841792714
 GameObject:
   m_ObjectHideFlags: 0
@@ -323,6 +353,7 @@ GameObject:
   - 124: {fileID: 841792716}
   - 81: {fileID: 841792715}
   - 114: {fileID: 841792721}
+  - 114: {fileID: 841792720}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -397,6 +428,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!114 &841792720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 841792714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52081c9981e4f4cb2b5f36d3e6da6af1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &841792721
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,30 +1,67 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Player;
 
 namespace InputManager {
+	public enum InputType {
+		JoystickOne,
+		JoystickTwo,
+		JoystickThree,
+		WASDSpace,
+		ArrowsL,
+		UHJKN
+	}
+
+
 	public class InputController : MonoBehaviour {
 
-		int numberOfJoysticksConnected = 0;
+		private InputType _inputType;
+		private bool initialised = false;
 
-		public void Init() {
-			foreach(string name in Input.GetJoystickNames() ) {
-				Debug.Log( name );
-				numberOfJoysticksConnected++;
-			}
+		public void Init( InputType inputType ) {
 
-			Debug.Log(numberOfJoysticksConnected.ToString() + " controllers connected");
+			_inputType = inputType;
+			initialised = true;
+
+			this.GetComponent<PlayerController>().Activate(this);
 		}
 
-		public float GetXAxis(int player) {
-			//2 controllers connected or 1 connected and player is 1
-			if (numberOfJoysticksConnected >= 2 || (numberOfJoysticksConnected == 1 && player == 1)) {
-				
-				return Input.GetAxis("Horizontal_" + player.ToString() );
+		public float GetXAxis() 
+		{
+			if (!initialised) {
+				Debug.Log("player controls not initialised for player " + this.gameObject.name + ". Try initialising in Awake");
+				return 0f;
+			}
+			
+			switch (_inputType) {
 
-			} else if (numberOfJoysticksConnected == 1 && player == 2) {
-				
-				//Player 2 when there is 1 or less controllers
-				if (Input.GetKey(KeyCode.LeftArrow)) {
+			case InputType.JoystickOne:
+
+				return Input.GetAxis("Horizontal_1");
+
+			case InputType.JoystickTwo:
+
+				return Input.GetAxis("Horizontal_2");
+
+			case InputType.JoystickThree:
+
+				return Input.GetAxis("Horizontal_3");
+
+			case InputType.WASDSpace:
+
+				if (Input.GetKey(KeyCode.A)) 
+				{
+					return -1;
+				} else if (Input.GetKey(KeyCode.D)) {
+					return 1;
+				} else {
+					return 0;
+				}
+
+			case InputType.ArrowsL:
+
+				if (Input.GetKey(KeyCode.LeftArrow)) 
+				{
 					return -1;
 				} else if (Input.GetKey(KeyCode.RightArrow)) {
 					return 1;
@@ -32,52 +69,61 @@ namespace InputManager {
 					return 0;
 				}
 
-			} else {
-				switch (player) {
-
-				case 1:
-
-					if (Input.GetKey(KeyCode.LeftArrow)) {
-						return -1;
-					} else if (Input.GetKey(KeyCode.RightArrow)) {
-						return 1;
-					} else {
-						return 0;
-					}
-
-				case 2:
-
-					if (Input.GetKey(KeyCode.A)) {
-						return -1;
-					} else if (Input.GetKey(KeyCode.D)) {
-						return 1;
-					} else {
-						return 0;
-					}
+			case InputType.UHJKN:
+			
+				if (Input.GetKey(KeyCode.H)) 
+				{
+					return -1;
+				} else if (Input.GetKey(KeyCode.K)) {
+					return 1;
+				} else {
+					return 0;
+				}
 
 				default:
-					
-					if (Input.GetKey(KeyCode.LeftArrow)) {
-						return -1;
-					} if (Input.GetKey(KeyCode.RightArrow)) {
-						return 1;
-					} else {
-						return 0;
-					}
-				}
+
+				Debug.Log("default hit for inputcontroller " + this.gameObject.name);
+				return 0;
+
 			}
 		}
 
-		public float GetYAxis(int player) {
-			//2 controllers connected or 1 connected and player is 1
-			if (numberOfJoysticksConnected >= 2 || (numberOfJoysticksConnected == 1 && player == 1)) {
-				
-				return Input.GetAxis("Vertical_" + player.ToString() );
+		public float GetYAxis() {
 
-			} else if (numberOfJoysticksConnected == 1 && player == 2) {
-				
-				//Player 2 when there is 1 or less controllers
-				if (Input.GetKey(KeyCode.DownArrow)) {
+			if (!initialised) {
+				Debug.Log("player controls not initialised for player " + this.gameObject.name + ". Try initialising in Awake");
+				return 0f;
+			}
+
+			switch (_inputType) {
+
+			case InputType.JoystickOne:
+
+				return Input.GetAxis("Vertical_1");
+
+			case InputType.JoystickTwo:
+
+				return Input.GetAxis("Vertical_2");
+
+			case InputType.JoystickThree:
+
+				return Input.GetAxis("Vertical_3");
+
+			case InputType.WASDSpace:
+
+				if (Input.GetKey(KeyCode.S)) 
+				{
+					return -1;
+				} else if (Input.GetKey(KeyCode.W)) {
+					return 1;
+				} else {
+					return 0;
+				}
+
+			case InputType.ArrowsL:
+
+				if (Input.GetKey(KeyCode.DownArrow)) 
+				{
 					return -1;
 				} else if (Input.GetKey(KeyCode.UpArrow)) {
 					return 1;
@@ -85,70 +131,62 @@ namespace InputManager {
 					return 0;
 				}
 
-			} else {
-				
-				switch (player) {
+			case InputType.UHJKN:
 
-				case 1:
-
-					if (Input.GetKey(KeyCode.DownArrow)) {
-						return -1;
-					} else if (Input.GetKey(KeyCode.UpArrow)) {
-						return 1;
-					} else {
-						return 0;
-					}
-
-				case 2:
-
-					if (Input.GetKey(KeyCode.S)) {
-						return -1;
-					} else if (Input.GetKey(KeyCode.W)) {
-						return 1;
-					} else {
-						return 0;
-					}
-
-				default:
-
-					if (Input.GetKey(KeyCode.DownArrow)) {
-						return -1;
-					} else if (Input.GetKey(KeyCode.UpArrow)) {
-						return 1;
-					} else {
-						return 0;
-					}
-
+				if (Input.GetKey(KeyCode.J)) 
+				{
+					return -1;
+				} else if (Input.GetKey(KeyCode.U)) {
+					return 1;
+				} else {
+					return 0;
 				}
+			default:
+
+				Debug.Log("default hit for inputcontroller " + this.gameObject.name);
+				return 0;
+
 			}
 		}
 
-		public bool JumpButtonPressed(int player) {
-			if (numberOfJoysticksConnected >= 2 || (numberOfJoysticksConnected == 1 && player == 1)) {
-				
-				return Input.GetButtonDown("Jump_" + player.ToString());
+		public bool JumpButtonPressed() {
 
-			} else if (numberOfJoysticksConnected == 1 && player == 2) {
+			if (!initialised) {
+				Debug.Log("player controls not initialised for player " + this.gameObject.name + ". Try initialising in Awake");
+				return false;
+			}
 
-				//Player 2 when there is 1 or less controllers
-				return Input.GetKey(KeyCode.L);
+			switch (_inputType) {
 
-			} else {
-				switch (player) {
+			case InputType.JoystickOne:
 
-				case 1:
+				return Input.GetKey("Jump_1");
 
-					return Input.GetKey(KeyCode.L);
+			case InputType.JoystickTwo:
 
-				case 2:
+				return Input.GetKey("Jump_2");
 
-					return Input.GetKey(KeyCode.Space);
+			case InputType.JoystickThree:
 
-				default:
+				return Input.GetKey("Jump_3");
 
-					return Input.GetKey(KeyCode.Space);
+			case InputType.WASDSpace:
 
-				}
+				return Input.GetKey(KeyCode.Space);
+
+			case InputType.ArrowsL:
+
+				return Input.GetKey(KeyCode.L); 
+
+			case InputType.UHJKN:
+
+				return Input.GetKey(KeyCode.N);
+
+			default:
+
+				Debug.Log("default hit for inputcontroller " + this.gameObject.name);
+				return false;
+
 			}
 		}
 	}

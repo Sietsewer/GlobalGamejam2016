@@ -30,7 +30,9 @@ public class GameManagerSingleton : MonoBehaviour {
 	void Start () {
 		//Find is very slow.. 
 		timerText = GameObject.Find("TimerText").GetComponent<Text>();
+	}
 
+	public void StartGame () {
 		//Game has started
 		started = true;
 	}
