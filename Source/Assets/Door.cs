@@ -3,9 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using LevelGrid;
+using UnityEngine.Events;
 
 public class Door : MonoBehaviour {
 	public Door linked;
+
+	public Transform landingPosition;
+
+	public UnityEvent PortalActivated = new UnityEvent();
 
 	public bool canRandomLink = true;
 	public Tile tile;
@@ -31,6 +36,8 @@ public class Door : MonoBehaviour {
 		// If door can be randomly linked, do so
 		if (canRandomLink && linked == null)
 			canidates.Add (this);
+
+		landingPosition = transform.GetChild (0);
 	}
 		
 	public void OnDestroy(){
@@ -43,7 +50,9 @@ public class Door : MonoBehaviour {
 	}
 
 	public void OnTriggerEnter(Collider other){
+		PortalActivated.Invoke ();
 
+		other.transform.position = linked.landingPosition.transform.position;
 		//TODO: add portaling magicu
 	}
 
