@@ -186,7 +186,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 493802, guid: fdb412a7d8ba147819d9b9e878820b92, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 493802, guid: fdb412a7d8ba147819d9b9e878820b92, type: 2}
       propertyPath: m_LocalPosition.z
@@ -213,8 +213,8 @@ Prefab:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 11412224, guid: fdb412a7d8ba147819d9b9e878820b92, type: 2}
-      propertyPath: jumpForce
-      value: 200
+      propertyPath: speed
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fdb412a7d8ba147819d9b9e878820b92, type: 2}
@@ -301,7 +301,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 841792714}
   m_LocalRotation: {x: 0.23060901, y: 0, z: 0, w: 0.9730465}
-  m_LocalPosition: {x: 0, y: 7.09, z: -14.31}
+  m_LocalPosition: {x: 0, y: 3.95, z: -8.05}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -372,7 +372,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 408210, guid: 27769ca4d2c12428cac46b3be8ab3f58, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 408210, guid: 27769ca4d2c12428cac46b3be8ab3f58, type: 2}
       propertyPath: m_LocalPosition.z
@@ -399,8 +399,8 @@ Prefab:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 11425900, guid: 27769ca4d2c12428cac46b3be8ab3f58, type: 2}
-      propertyPath: jumpForce
-      value: 200
+      propertyPath: speed
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 27769ca4d2c12428cac46b3be8ab3f58, type: 2}
@@ -521,7 +521,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Convex: 1
+  m_Convex: 0
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &2013982430
 MeshFilter:
