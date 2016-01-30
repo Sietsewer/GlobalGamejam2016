@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 using Player;
 using InputManager;
@@ -27,8 +27,6 @@ namespace Player {
 			activated = true;
 		}
 			
-		public bool justEnteredDoor = false;
-
 		// Use this for initialization
 		void Start () {
 			_rigidbody = GetComponent<Rigidbody>();
@@ -37,7 +35,7 @@ namespace Player {
 
 		public bool forcedMove {
 			get;
-			set;
+			private set;
 		}
 
 		// Update is called once per frame

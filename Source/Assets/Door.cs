@@ -50,10 +50,31 @@ public class Door : MonoBehaviour {
 	}
 
 	public void OnTriggerEnter(Collider other){
-		PortalActivated.Invoke ();
+		if (!colliding) {
+			colliding = true;
+			Player.PlayerController pc = other.GetComponent<Player.PlayerController> ();
+			if (!pc.justEnteredDoor && !pc.forcedMove) {
+				pc.justEnteredDoor = true;
 
-		other.transform.position = linked.landingPosition.transform.position;
-		//TODO: add portaling magicu
+				PortalActivated.Invoke ();
+
+				other.transform.position = linked.transform.position;
+				TransformAnimations.animatePlayer (pc, linked.transform.position, linked.landingPosition.position);
+				//Vector3 velocity = linked.landingPosition.position - linked.transform.position;
+				//velocity = velocity.normalized * 100.0f;
+				//other.attachedRigidbody.velocity = velocity;
+				//other.attachedRigidbody.AddForce(velocity);
+				//pc.forcedMove = true;
+			} else {
+				pc.justEnteredDoor = false;
+			}
+		}
+	}
+
+	private bool colliding = false;
+
+	void Update(){
+		colliding = false;
 	}
 
 	private static System.Random r = new System.Random();

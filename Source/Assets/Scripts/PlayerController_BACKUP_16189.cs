@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 using Player;
 using InputManager;
@@ -22,13 +22,16 @@ namespace Player {
 
 		private bool activated = false;
 
+<<<<<<< HEAD
 		public void Activate (InputController inputController) {
 			_inputController = inputController;
 			activated = true;
 		}
 			
+=======
 		public bool justEnteredDoor = false;
 
+>>>>>>> develop
 		// Use this for initialization
 		void Start () {
 			_rigidbody = GetComponent<Rigidbody>();
