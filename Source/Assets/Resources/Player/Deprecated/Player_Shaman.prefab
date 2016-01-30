@@ -30,6 +30,7 @@ GameObject:
   - 54: {fileID: 5434582}
   - 136: {fileID: 13671970}
   - 114: {fileID: 11408534}
+  - 114: {fileID: 11497206}
   m_Layer: 0
   m_Name: Player_Shaman
   m_TagString: Untagged
@@ -56,8 +57,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 154342}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.03, y: 0, z: -1.18}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalPosition: {x: -0.76657844, y: 1.3973792, z: -1.6422362}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children:
   - {fileID: 433662}
   m_Father: {fileID: 0}
@@ -132,12 +133,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 600780f83504b4e4cb1e2c1dfc6c2375, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentTile: {fileID: 0}
   player: 2
   speed: 3
   jumpForce: 200
   inventory: {fileID: 0}
   Shaman: 0
   justEnteredDoor: 0
+--- !u!114 &11497206
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 154342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b1b1808a61fe473fae6a939848134ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerChacter: {fileID: 11425660}
 --- !u!136 &13643700
 CapsuleCollider:
   m_ObjectHideFlags: 1
