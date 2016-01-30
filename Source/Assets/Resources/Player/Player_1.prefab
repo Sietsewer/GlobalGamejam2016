@@ -29,6 +29,7 @@ GameObject:
   - 114: {fileID: 11425900}
   - 54: {fileID: 5474544}
   - 136: {fileID: 13697412}
+  - 114: {fileID: 11481146}
   m_Layer: 0
   m_Name: Player_1
   m_TagString: Untagged
@@ -121,9 +122,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: 1
-  speed: 1
+  speed: 2
   jumpForce: 200
   inventory: {fileID: 0}
+--- !u!114 &11481146
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 158930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d9d9c9c7e192432ab564e9173f18c8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!136 &13610750
 CapsuleCollider:
   m_ObjectHideFlags: 1
