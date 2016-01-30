@@ -13,9 +13,12 @@ namespace Player {
 		private bool _jumping = false;
 		private Rigidbody _rigidbody;
 
+		public GameObject inventory;
+
 		// Use this for initialization
 		void Start () {
 			_rigidbody = GetComponent<Rigidbody>();
+			inventory = null;
 		}
 		
 		// Update is called once per frame
@@ -44,8 +47,26 @@ namespace Player {
 		void OnTriggerEnter(Collider other) {
 			Debug.Log(other.name + " collisioned with " + gameObject.name);
 
-			if (other.tag == "floor") {
+			switch (other.tag) {
+			case "floor":
+				//Reset jumping
 				_jumping = false;
+				break;
+			case "collectible":
+				//Store collectible in inventory and destroy the world object
+				if (inventory == null) {
+					inventory = other.gameObject;
+					other.gameObject.SetActive( false );
+				}
+				break;
+			case "altar":
+				//check if there is collectible to deliver
+				if (inventory != null) {
+					//TODO: Trigger point event
+					Destroy( inventory );
+					Debug.Log("Collectible delivered");
+				}
+				break;
 			}
 		}
 	}
