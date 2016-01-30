@@ -15,6 +15,8 @@ namespace Player {
 
 		public GameObject inventory;
 
+		public bool justEnteredDoor = false;
+
 		// Use this for initialization
 		void Start () {
 			_rigidbody = GetComponent<Rigidbody>();
@@ -25,7 +27,7 @@ namespace Player {
 
 		public bool forcedMove {
 			get;
-			private set;
+			set;
 		}
 
 		// Update is called once per frame
