@@ -152,7 +152,7 @@ namespace InputManager {
 			}
 		}
 
-		public bool JumpButtonPressed() {
+		public bool ActionButtonPressed() {
 
 			if (!initialised) {
 				Debug.Log("player controls not initialised for player " + this.gameObject.name + ". Try initialising in Awake");
@@ -191,6 +191,10 @@ namespace InputManager {
 				return false;
 
 			}
+		}
+
+		public bool JumpButtonPressed () {
+			return false;
 		}
 	}
 }

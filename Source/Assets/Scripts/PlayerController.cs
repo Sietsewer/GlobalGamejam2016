@@ -22,6 +22,8 @@ namespace Player {
 
 		private bool activated = false;
 
+		private Animator _animator;
+
 		public void Activate (InputController inputController) {
 			_inputController = inputController;
 			activated = true;
@@ -31,6 +33,7 @@ namespace Player {
 
 		// Use this for initialization
 		void Start () {
+			_animator = GetComponent<Animator>();
 			_rigidbody = GetComponent<Rigidbody>();
 			inventory = null;
 		}
@@ -46,15 +49,34 @@ namespace Player {
 				return;
 
 			if (!forcedMove) {
-//				player movement
-				//transform.Translate (GetXAxis (player) * Time.deltaTime * speed, 0, GetYAxis (player) * Time.deltaTime * speed);
-				_rigidbody.velocity = Quaternion.Euler(0,45,0) * new Vector3(_inputController.GetXAxis ()  * speed, 0, _inputController.GetYAxis () * speed);
+				//player movement
+				float xAxis = _inputController.GetXAxis ();
+				float yAxis = _inputController.GetYAxis ();
+				_rigidbody.velocity = Quaternion.Euler(0,45,0) * new Vector3(xAxis  * speed, 0, yAxis * speed);
+
+				//movement animation
+				Debug.Log(Mathf.Clamp( Mathf.Abs( xAxis ) + Mathf.Abs( yAxis ), 0, 1).ToString());
+				_animator.SetFloat("Forward", Mathf.Clamp( Mathf.Abs( xAxis ) + Mathf.Abs( yAxis ), 0, 1));
+
+				if (xAxis < 0) {
+					transform.localRotation = Quaternion.Euler(0, 0, 0);
+				} else {
+					transform.localRotation = Quaternion.Euler(0, 180, 0);
+				}
+
 				//player jumping
 				if (_inputController.JumpButtonPressed ()) {
 					if (!_jumping) {
 						Debug.Log ("Player " + player.ToString () + " jump");
 						Jump ();
 					}
+				}
+
+				//player hoebahoeba
+				if (_inputController.ActionButtonPressed () ) {
+					_animator.SetBool("Crazy", true);
+				} else {
+					_animator.SetBool("Crazy", false);
 				}
 			}
 		}
