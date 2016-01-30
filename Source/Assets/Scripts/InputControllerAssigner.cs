@@ -14,6 +14,7 @@ namespace InputManager {
 		//The canvas which holds the choises
 		public GameObject selectionPanel;
 		public Dropdown ddPlayer1, ddPlayer2, ddPlayer3;
+		public Text text1, text2, text3;
 		public Text startButton;
 
 		void Awake() {
@@ -32,6 +33,27 @@ namespace InputManager {
 			ddPlayer2.ClearOptions();
 			ddPlayer3.ClearOptions();
 			UpdateDropDowns();
+
+			for (int i = 0; i <= players.Count - 1; i++) {
+
+				switch (i) {
+
+				case 0:
+					text1.text = players[0].name;
+					break;
+				case 1:
+					text2.text = players[1].name;
+					break;
+				case 2:
+					text3.text = players[2].name;
+					break;
+				default:
+					Debug.Log("Error");
+					break;
+
+				}
+
+			}
 		}
 
 		//Update available input list
