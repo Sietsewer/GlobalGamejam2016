@@ -24,6 +24,8 @@ namespace Player {
 
 		private Animator _animator;
 
+		public bool Shaman = false;
+
 		public void Activate (InputController inputController) {
 			_inputController = inputController;
 			activated = true;
@@ -55,7 +57,6 @@ namespace Player {
 				_rigidbody.velocity = Quaternion.Euler(0,45,0) * new Vector3(xAxis  * speed, 0, yAxis * speed);
 
 				//movement animation
-				Debug.Log(Mathf.Clamp( Mathf.Abs( xAxis ) + Mathf.Abs( yAxis ), 0, 1).ToString());
 				_animator.SetFloat("Forward", Mathf.Clamp( Mathf.Abs( xAxis ) + Mathf.Abs( yAxis ), 0, 1));
 
 				if (xAxis < 0) {
