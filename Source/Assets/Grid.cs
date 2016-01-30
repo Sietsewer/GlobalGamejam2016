@@ -10,15 +10,7 @@ namespace LevelGrid{
 
 		// Use this for initialization
 		void Start () {
-			String rs = "";
 			buildGrid ();
-			foreach (Tile[] ta in tileGrid) {
-				foreach (Tile ti in ta) {
-					rs += ti == null ? "O" : "X";
-				}
-				rs += "\n";
-			}
-			Debug.Log (rs);
 		}
 
 		/// <summary>
