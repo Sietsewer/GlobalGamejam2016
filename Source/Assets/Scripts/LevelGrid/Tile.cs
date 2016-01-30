@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 namespace LevelGrid {
 	[System.Serializable]
@@ -9,6 +10,8 @@ namespace LevelGrid {
 		 * 	  []
 		 * SW    SE
 		 */
+
+		public List<Tile> linkedTiles = new List<Tile>();
 
 		public Tile NorthEast;
 		public Tile SouthEast;
