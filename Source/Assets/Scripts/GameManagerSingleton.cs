@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public enum Winner {
 	Shaman,
@@ -100,5 +101,9 @@ public class GameManagerSingleton : MonoBehaviour {
 			break;
 		}
 
+	}
+
+	public void RestartGame () {
+		SceneManager.LoadScene("gameScene");
 	}
 }
