@@ -1,9 +1,16 @@
 fileFormatVersion: 2
 guid: 02e45a67d0130479a8e8d47f9ef17b1b
-timeCreated: 1454202806
+timeCreated: 1454204108
 licenseType: Pro
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: Startscherm_BUTTONS_0
+    21300002: Startscherm_BUTTONS_1
+    21300004: Startscherm_BUTTONS_2
+    21300006: Startscherm_BUTTONS_3
+    21300008: Startscherm_BUTTONS_4
+    21300010: Startscherm_BUTTONS_5
+    21300012: Startscherm_BUTTONS_6
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -30,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     filterMode: -1
-    aniso: -1
+    aniso: 16
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
@@ -38,7 +45,7 @@ TextureImporter:
   rGBM: 0
   compressionQuality: 50
   allowsAlphaSplitting: 0
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -49,7 +56,263 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: Startscherm_BUTTONS_0
+      rect:
+        serializedVersion: 2
+        x: 1136
+        y: 376
+        width: 316
+        height: 480
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 111, y: -227}
+        - {x: 101, y: -226}
+        - {x: 98, y: -224}
+        - {x: 98, y: -225}
+        - {x: 100, y: -224}
+        - {x: 121, y: -205}
+        - {x: 136, y: -192}
+        - {x: 158, y: -173}
+        - {x: 158, y: 147}
+        - {x: 156, y: 149}
+        - {x: 149, y: 155}
+        - {x: 141, y: 162}
+        - {x: 127, y: 174}
+        - {x: 119, y: 181}
+        - {x: 104, y: 194}
+        - {x: 97, y: 200}
+        - {x: 82, y: 213}
+        - {x: 68, y: 225}
+        - {x: 60, y: 232}
+        - {x: 53, y: 238}
+        - {x: 51, y: 240}
+        - {x: -58, y: 240}
+        - {x: -65, y: 234}
+        - {x: -80, y: 221}
+        - {x: -94, y: 209}
+        - {x: -116, y: 190}
+        - {x: -131, y: 177}
+        - {x: -143, y: 167}
+        - {x: -143, y: 186}
+        - {x: -144, y: 187}
+        - {x: -144, y: 215}
+        - {x: -145, y: 225}
+        - {x: -147, y: 238}
+        - {x: -148, y: 240}
+        - {x: -158, y: 240}
+        - {x: -158, y: -179}
+        - {x: -156, y: -181}
+        - {x: -148, y: -188}
+        - {x: -141, y: -194}
+        - {x: -133, y: -201}
+        - {x: -119, y: -213}
+        - {x: -111, y: -220}
+        - {x: -109, y: -226}
+        - {x: -123, y: -227}
+        - {x: -129, y: -230}
+        - {x: -136, y: -233}
+        - {x: -141, y: -239}
+        - {x: -141, y: -240}
+        - {x: 135, y: -240}
+        - {x: 136, y: -238}
+        - {x: 128, y: -232}
+        - {x: 123, y: -230}
+    - name: Startscherm_BUTTONS_1
+      rect:
+        serializedVersion: 2
+        x: 808
+        y: 498
+        width: 316
+        height: 480
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -143, y: -190}
+        - {x: -136, y: -196}
+        - {x: -135, y: -196}
+        - {x: -121, y: -209}
+        - {x: -120, y: -209}
+        - {x: -107, y: -221}
+        - {x: -114, y: -222}
+        - {x: -124, y: -224}
+        - {x: -131, y: -226}
+        - {x: -136, y: -228}
+        - {x: -138, y: -230}
+        - {x: -144, y: -235}
+        - {x: -146, y: -240}
+        - {x: 158, y: -240}
+        - {x: 158, y: 149}
+        - {x: 154, y: 153}
+        - {x: 147, y: 159}
+        - {x: 139, y: 166}
+        - {x: 132, y: 172}
+        - {x: 124, y: 179}
+        - {x: 110, y: 191}
+        - {x: 109, y: 191}
+        - {x: 102, y: 198}
+        - {x: 88, y: 210}
+        - {x: 87, y: 210}
+        - {x: 80, y: 217}
+        - {x: 73, y: 223}
+        - {x: 72, y: 223}
+        - {x: 65, y: 230}
+        - {x: 64, y: 230}
+        - {x: 53, y: 240}
+        - {x: -64, y: 240}
+        - {x: -66, y: 238}
+        - {x: -73, y: 232}
+        - {x: -80, y: 225}
+        - {x: -81, y: 225}
+        - {x: -88, y: 219}
+        - {x: -102, y: 206}
+        - {x: -103, y: 206}
+        - {x: -110, y: 200}
+        - {x: -117, y: 193}
+        - {x: -118, y: 193}
+        - {x: -132, y: 181}
+        - {x: -139, y: 174}
+        - {x: -140, y: 174}
+        - {x: -147, y: 168}
+        - {x: -154, y: 161}
+        - {x: -155, y: 161}
+        - {x: -158, y: 158}
+        - {x: -158, y: -240}
+        - {x: -147, y: -240}
+        - {x: -147, y: -218}
+        - {x: -146, y: -217}
+        - {x: -146, y: -189}
+    - name: Startscherm_BUTTONS_2
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 372
+        width: 316
+        height: 480
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 112, y: -222}
+        - {x: 110, y: -216}
+        - {x: 118, y: -209}
+        - {x: 132, y: -197}
+        - {x: 140, y: -190}
+        - {x: 147, y: -184}
+        - {x: 155, y: -177}
+        - {x: 158, y: -174}
+        - {x: 158, y: 240}
+        - {x: 147, y: 240}
+        - {x: 146, y: 236}
+        - {x: 145, y: 229}
+        - {x: 144, y: 219}
+        - {x: 144, y: 191}
+        - {x: 143, y: 190}
+        - {x: 143, y: 170}
+        - {x: 138, y: 174}
+        - {x: 130, y: 181}
+        - {x: 115, y: 194}
+        - {x: 108, y: 200}
+        - {x: 93, y: 213}
+        - {x: 79, y: 225}
+        - {x: 71, y: 232}
+        - {x: 64, y: 238}
+        - {x: 62, y: 240}
+        - {x: -56, y: 240}
+        - {x: -61, y: 236}
+        - {x: -69, y: 229}
+        - {x: -83, y: 217}
+        - {x: -91, y: 210}
+        - {x: -105, y: 198}
+        - {x: -113, y: 191}
+        - {x: -120, y: 185}
+        - {x: -150, y: 159}
+        - {x: -158, y: 152}
+        - {x: -158, y: -169}
+        - {x: -152, y: -175}
+        - {x: -122, y: -201}
+        - {x: -108, y: -213}
+        - {x: -101, y: -220}
+        - {x: -106, y: -222}
+        - {x: -111, y: -223}
+        - {x: -124, y: -225}
+        - {x: -131, y: -230}
+        - {x: -136, y: -235}
+        - {x: -138, y: -240}
+        - {x: 144, y: -240}
+        - {x: 142, y: -235}
+        - {x: 137, y: -230}
+        - {x: 126, y: -225}
+    - name: Startscherm_BUTTONS_3
+      rect:
+        serializedVersion: 2
+        x: 823
+        y: 118
+        width: 280
+        height: 268
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 125, y: 132}
+        - {x: 126, y: 134}
+        - {x: -130, y: 134}
+        - {x: -129, y: 131}
+        - {x: -122, y: 130}
+        - {x: -120, y: 129}
+        - {x: -140, y: 109}
+        - {x: -140, y: -134}
+        - {x: 140, y: -134}
+        - {x: 140, y: 118}
+        - {x: 127, y: 131}
+    - name: Startscherm_BUTTONS_4
+      rect:
+        serializedVersion: 2
+        x: 531
+        y: 313
+        width: 199
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -99.5, y: 20}
+        - {x: -99.5, y: -20}
+        - {x: 99.5, y: -20}
+        - {x: 99.5, y: 20}
+    - name: Startscherm_BUTTONS_5
+      rect:
+        serializedVersion: 2
+        x: 863
+        y: 439
+        width: 196
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -98, y: 20.5}
+        - {x: -98, y: -20.5}
+        - {x: 98, y: -20.5}
+        - {x: 98, y: 20.5}
+    - name: Startscherm_BUTTONS_6
+      rect:
+        serializedVersion: 2
+        x: 1191
+        y: 314
+        width: 198
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -99, y: 20.5}
+        - {x: -99, y: -20.5}
+        - {x: 99, y: -20.5}
+        - {x: 99, y: 20.5}
     outline: []
   spritePackingTag: 
   userData: 
