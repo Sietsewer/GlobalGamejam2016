@@ -18,7 +18,7 @@ public class GameManagerSingleton : MonoBehaviour {
 
 	public float timer = 100;
 	public Text timerText, resultText;
-	public GameObject resultPanel;
+	public GameObject resultPanel, shamanResult, playerResult;
 	bool started, end;
 
 	void Awake () {
@@ -34,6 +34,8 @@ public class GameManagerSingleton : MonoBehaviour {
 //		DontDestroyOnLoad( this.gameObject );
 
 		resultPanel.SetActive(false);
+		shamanResult.SetActive(false);
+		playerResult.SetActive(false);
 	}
 
 	// Use this for initialization
@@ -85,13 +87,16 @@ public class GameManagerSingleton : MonoBehaviour {
 	public void TriggerResultPanel (Winner winner) {
 
 		resultPanel.SetActive(true);
+		timerText.gameObject.SetActive(false);
 
 		switch (winner) {
 		case Winner.Players:
 			resultText.text = "The Players Win!";
+			playerResult.SetActive(true);
 			break;
 		case Winner.Shaman:
 			resultText.text = "The Shaman Wins!";
+			shamanResult.SetActive(true);
 			break;
 		}
 
