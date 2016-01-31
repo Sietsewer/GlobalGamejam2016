@@ -6,6 +6,8 @@ using LevelGrid;
 using UnityEngine.Events;
 
 public class Door : MonoBehaviour {
+	public DoorBlock doorBlocker;
+
 	public Door linked;
 	public DoorLight doorLight;
 
@@ -28,6 +30,7 @@ public class Door : MonoBehaviour {
 
 
 	public void Awake(){
+		doorBlocker = gameObject.GetComponent<DoorBlock> ();
 		doorLight = gameObject.GetComponent <DoorLight>();
 		// Link tile in parent to door
 		tile = transform.GetComponentInParent<Tile> ();
