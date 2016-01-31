@@ -134,7 +134,7 @@ namespace Player {
 				if (inventory != null && !Shaman) {
 
 					inventory.gameObject.SetActive(true);
-					inventory == null;
+					inventory = null;
 
 				}
 				break;
