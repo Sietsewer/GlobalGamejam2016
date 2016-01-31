@@ -98,7 +98,7 @@ namespace Player {
 
 		//Player in collision with floor reset jump to false
 		void OnTriggerEnter(Collider other) {
-			Debug.Log(other.name + " collisioned with " + gameObject.name);
+			Debug.Log(other.name + " collisioned with " + gameObject.name); 
 
 			switch (other.tag) {
 			case "floor":
@@ -107,17 +107,26 @@ namespace Player {
 				break;
 			case "collectible":
 				//Store collectible in inventory and destroy the world object
-				if (inventory == null) {
+				if (inventory == null && !Shaman) {
 					inventory = other.gameObject;
 					other.gameObject.SetActive( false );
 				}
 				break;
 			case "altar":
 				//check if there is collectible to deliver
-				if (inventory != null) {
-					//TODO: Trigger point event
+				if (inventory != null && !Shaman) {
 					Destroy( inventory );
+
+					if (inventory.name == "Collectible_Blue") {
+						other.gameObject.GetComponent<Altar>().DiamondRetrieved(Diamond.blue);
+					} else if (inventory.name == "Collectible_Red") {
+						other.gameObject.GetComponent<Altar>().DiamondRetrieved(Diamond.red);
+					} else {
+						Debug.Log("Error. Name is not correct: " + inventory.name);
+					}
+
 					inventory = null;
+
 					Debug.Log("Collectible delivered");
 				}
 				break;

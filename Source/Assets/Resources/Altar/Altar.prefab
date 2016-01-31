@@ -1,5 +1,21 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &100076
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 460028}
+  - 108: {fileID: 10810158}
+  m_Layer: 9
+  m_Name: Point light
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &188192
 GameObject:
   m_ObjectHideFlags: 0
@@ -11,6 +27,7 @@ GameObject:
   - 33: {fileID: 3380560}
   - 65: {fileID: 6512214}
   - 23: {fileID: 2330802}
+  - 114: {fileID: 11400602}
   m_Layer: 0
   m_Name: Altar
   m_TagString: altar
@@ -24,11 +41,24 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 188192}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.67, z: 0}
-  m_LocalScale: {x: 0.5234316, y: 1.416824, z: 0.5234316}
-  m_Children: []
+  m_LocalRotation: {x: 0.2988362, y: -0.6408564, z: 0.6408565, w: 0.29883617}
+  m_LocalPosition: {x: -0.512, y: 1.744, z: -1.414}
+  m_LocalScale: {x: 0.05, y: 0.05, z: 0.07184082}
+  m_Children:
+  - {fileID: 460028}
   m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!4 &460028
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100076}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071067}
+  m_LocalPosition: {x: -0.33, y: 0.3158208, z: -4.34}
+  m_LocalScale: {x: 0.019999998, y: 0.02, z: 0.019999998}
+  m_Children: []
+  m_Father: {fileID: 439092}
   m_RootOrder: 0
 --- !u!23 &2330802
 MeshRenderer:
@@ -62,7 +92,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 188192}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!65 &6512214
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -73,8 +103,58 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 5.96, y: 2.69, z: 10.51}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!108 &10810158
+Light:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100076}
+  m_Enabled: 1
+  serializedVersion: 6
+  m_Type: 2
+  m_Color: {r: 0.8470589, g: 0.8313726, b: 0.7372549, a: 1}
+  m_Intensity: 2.7
+  m_Range: 3.12
+  m_SpotAngle: 30
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 2
+    m_Resolution: -1
+    m_Strength: 1
+    m_Bias: 0.03
+    m_NormalBias: 0.45
+    m_NearPlane: 0.1
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 1
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294966783
+  m_Lightmapping: 4
+  m_BounceIntensity: 0
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
+  m_AreaSize: {x: 1, y: 1}
+--- !u!114 &11400602
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 188192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2ef67526fbda4617a1c0bea90fff6e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 0}
+  emptyTotum: {fileID: 2800000, guid: 4fe3696fcdfc24caf842236cbb2007ce, type: 3}
+  BlueTotem: {fileID: 2800000, guid: f737ff11d5f4c4b679dec2e374bab0f6, type: 3}
+  RedTotem: {fileID: 2800000, guid: 8cb9c7c6de7b848bfacd704280d0678e, type: 3}
+  fullTotem: {fileID: 2800000, guid: 5b2a38a4a280946429df40e76a32435a, type: 3}
+  material: {fileID: 2100000, guid: 39f80e47b7a3f4cb0ab9299914ced9be, type: 2}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
