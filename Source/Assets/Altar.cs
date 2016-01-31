@@ -12,6 +12,10 @@ public class Altar : MonoBehaviour {
 	public Texture emptyTotum, BlueTotem, RedTotem, fullTotem;
 	public Material material;
 
+	void Awake(){
+		material.mainTexture = emptyTotum;
+	}
+
 	//Triggered through the players
 	public void DiamondRetrieved (Diamond diamond) {
 		switch (diamond) {
