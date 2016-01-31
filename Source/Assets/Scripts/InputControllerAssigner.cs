@@ -16,6 +16,7 @@ namespace InputManager {
 		public Dropdown ddPlayer1, ddPlayer2, ddPlayer3;
 		public Text text1, text2, text3;
 		public Text startButton;
+		public GameManagerSingleton gameManagerSingleton;
 
 		void Awake() {
 			selectionPanel.SetActive(true);
@@ -145,7 +146,7 @@ namespace InputManager {
 				}
 
 				selectionPanel.SetActive(false);
-				GameManagerSingleton.sharedInstance.StartGame();
+				gameManagerSingleton.StartGame();
 			} else {
 				startButton.text = "Please select different controls";
 			}

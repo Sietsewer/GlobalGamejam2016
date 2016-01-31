@@ -2,28 +2,38 @@
 using System.Collections;
 using UnityEngine.UI;
 
-public class GameManagerSingleton : MonoBehaviour {
+public enum Winner {
+	Shaman,
+	Players
+}
 
-	//protect the init
-	protected GameManagerSingleton() {}
-	//Shared instance
-	public static GameManagerSingleton sharedInstance;
+public class GameManagerSingleton : MonoBehaviour {
+//
+//	//protect the init
+//	protected GameManagerSingleton() {}
+//	//Shared instance
+//	public static GameManagerSingleton sharedInstance;
+//
+
 
 	public float timer = 100;
-	public Text timerText;
-	bool started;
+	public Text timerText, resultText;
+	public GameObject resultPanel;
+	bool started, end;
 
 	void Awake () {
+//
+//		// if the singleton hasn't been initialized yet
+//		if (sharedInstance != null && sharedInstance != this) 
+//		{
+//			Destroy(this.gameObject);
+//			return;
+//		}
+//
+//		sharedInstance = this;
+//		DontDestroyOnLoad( this.gameObject );
 
-		// if the singleton hasn't been initialized yet
-		if (sharedInstance != null && sharedInstance != this) 
-		{
-			Destroy(this.gameObject);
-			return;
-		}
-
-		sharedInstance = this;
-		DontDestroyOnLoad( this.gameObject );
+		resultPanel.SetActive(false);
 	}
 
 	// Use this for initialization
@@ -34,6 +44,7 @@ public class GameManagerSingleton : MonoBehaviour {
 		}
 
 		timerText.gameObject.SetActive(false);
+		end = false;
 	}
 
 	public void StartGame () {
@@ -47,11 +58,15 @@ public class GameManagerSingleton : MonoBehaviour {
 		if (!started)
 			return;
 
-		//Setting the timer text and 
+		//Setting the timer text 
 		UpdateTimer();
 
-	}
 
+		if (timer <= 0 && !end) {
+			end = true;
+			TriggerResultPanel(Winner.Shaman);
+		}
+	}
 
 
 	void UpdateTimer () {
@@ -65,5 +80,20 @@ public class GameManagerSingleton : MonoBehaviour {
 
 		//update the text
 		timerText.text = string.Format("{0:0}:{1:00}", minutes, seconds);
+	}
+
+	public void TriggerResultPanel (Winner winner) {
+
+		resultPanel.SetActive(true);
+
+		switch (winner) {
+		case Winner.Players:
+			resultText.text = "The Players Win!";
+			break;
+		case Winner.Shaman:
+			resultText.text = "The Shaman Wins!";
+			break;
+		}
+
 	}
 }
