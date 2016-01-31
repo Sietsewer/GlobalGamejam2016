@@ -3,6 +3,7 @@ using System.Collections;
 
 public class SpellCircleEffect : MonoBehaviour {
 	public AnimationCurve lightCurve = new AnimationCurve ();
+	public AnimationCurve lightRange = new AnimationCurve ();
 	public Light light;
 	public ParticleSystem smoke;
 	public ParticleSystem circles;
@@ -11,7 +12,7 @@ public class SpellCircleEffect : MonoBehaviour {
 	public float lightTime = 1.0f;
 
 
-	void Awake(){
+	void OnEnable(){
 		StartCoroutine (startRoutine ());
 	}
 
@@ -20,7 +21,13 @@ public class SpellCircleEffect : MonoBehaviour {
 		while (t < lightTime) {
 			t += Time.deltaTime;
 			light.intensity = lightCurve.Evaluate (t);
+			light.range = lightRange.Evaluate (t);
 			yield return null;
 		}
+		t = 0.0f;
+	}
+
+	void OnDisable(){
+		StopAllCoroutines ();
 	}
 }

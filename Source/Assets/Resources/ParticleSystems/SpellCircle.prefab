@@ -1,5 +1,23 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &133322
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 477228}
+  - 33: {fileID: 3325902}
+  - 65: {fileID: 6500264}
+  - 114: {fileID: 11460270}
+  m_Layer: 0
+  m_Name: Cube
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &142260
 GameObject:
   m_ObjectHideFlags: 0
@@ -78,12 +96,13 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 142260}
   m_LocalRotation: {x: 0.65328157, y: 0.27059808, z: -0.2705981, w: 0.65328145}
-  m_LocalPosition: {x: 0.0336, y: 1.0045, z: 0.0311}
+  m_LocalPosition: {x: -1, y: 1.01, z: 1}
   m_LocalScale: {x: 0.7102941, y: 0.7102943, z: 0.7102943}
   m_Children:
   - {fileID: 484848}
   - {fileID: 426540}
   - {fileID: 471576}
+  - {fileID: 477228}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &426540
@@ -110,6 +129,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 416628}
   m_RootOrder: 2
+--- !u!4 &477228
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 133322}
+  m_LocalRotation: {x: 0, y: 0, z: 0.38268346, w: 0.9238795}
+  m_LocalPosition: {x: 0, y: -0, z: -0.009}
+  m_LocalScale: {x: 1.3081256, y: 1.3081248, z: 0.043357335}
+  m_Children: []
+  m_Father: {fileID: 416628}
+  m_RootOrder: 3
 --- !u!4 &484848
 Transform:
   m_ObjectHideFlags: 1
@@ -155,6 +186,13 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 142260}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!33 &3325902
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 133322}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!64 &6400010
 MeshCollider:
   m_ObjectHideFlags: 1
@@ -167,6 +205,18 @@ MeshCollider:
   serializedVersion: 2
   m_Convex: 0
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &6500264
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 133322}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!108 &10889628
 Light:
   m_ObjectHideFlags: 1
@@ -182,7 +232,7 @@ Light:
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_Strength: 1
     m_Bias: 0.05
@@ -200,6 +250,19 @@ Light:
   m_ShadowRadius: 0
   m_ShadowAngle: 0
   m_AreaSize: {x: 1, y: 1}
+--- !u!114 &11460270
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 133322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82db3f1c6cf6b4814ba12d4e26504e54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  stunnedPlayers: []
 --- !u!114 &11483550
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -214,25 +277,76 @@ MonoBehaviour:
   lightCurve:
     serializedVersion: 2
     m_Curve:
+    - time: -0.005803168
+      value: -0.029565498
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 0.25596812
+      value: 3.9719045
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 0.6296122
+      value: 1.7945967
+      inSlope: -1.1635906
+      outSlope: -1.1635906
+      tangentMode: 0
+    - time: 0.8867568
+      value: 2.155306
+      inSlope: 0.17392668
+      outSlope: 0.17392668
+      tangentMode: 0
+    - time: 1.2901093
+      value: 1.693044
+      inSlope: 0.096559525
+      outSlope: 0.096559525
+      tangentMode: 0
+    - time: 1.6449238
+      value: 2.1583524
+      inSlope: 0.12857196
+      outSlope: 0.12857196
+      tangentMode: 0
+    - time: 2.07949
+      value: 1.7488716
+      inSlope: 0.06198883
+      outSlope: 0.06198883
+      tangentMode: 0
+    - time: 2.4991589
+      value: 2.1555166
+      inSlope: -0.096312016
+      outSlope: -0.096312016
+      tangentMode: 0
+    - time: 2.9897575
+      value: 1.8051087
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  lightRange:
+    serializedVersion: 2
+    m_Curve:
     - time: 0
       value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
-    - time: 0.07613462
-      value: 4.885106
+    - time: 0.32645607
+      value: 3.004406
       inSlope: 0
       outSlope: 0
       tangentMode: 0
-    - time: 0.20948176
-      value: 5.2467537
+    - time: 0.7313945
+      value: 1.1435602
       inSlope: -1.1635906
       outSlope: -1.1635906
       tangentMode: 0
-    - time: 0.49478197
-      value: 2.4760284
-      inSlope: 0
-      outSlope: 0
+    - time: 3.0171282
+      value: 0.9120122
+      inSlope: -0.7733827
+      outSlope: -0.7733827
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2

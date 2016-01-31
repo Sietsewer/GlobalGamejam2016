@@ -27,6 +27,8 @@ namespace Player {
 
 		private Animator _animator;
 
+		public bool stunned = false;
+
 		public bool Shaman = false;
 
 		public void Activate (InputController inputController) {
@@ -58,7 +60,7 @@ namespace Player {
 			if (!activated)
 				return;
 
-			if (!forcedMove) {
+			if (!forcedMove && !stunned) {
 				//player movement
 				float xAxis = _inputController.GetXAxis ();
 				float yAxis = _inputController.GetYAxis ();
@@ -134,7 +136,7 @@ namespace Player {
 				if (inventory != null && !Shaman) {
 
 					inventory.gameObject.SetActive(true);
-					inventory == null;
+					inventory = null;
 
 				}
 				break;
