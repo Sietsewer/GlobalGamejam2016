@@ -11,6 +11,8 @@ namespace LevelGrid {
 		 * SW    SE
 		 */
 
+		public Transform effectPoint;
+
 		public List<Tile> linkedTiles = new List<Tile>();
 
 		public Tile NorthEast;
