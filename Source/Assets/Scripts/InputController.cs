@@ -7,9 +7,9 @@ namespace InputManager {
 		JoystickOne,
 		JoystickTwo,
 		JoystickThree,
-		WASDSpace,
-		ArrowsL,
-		UHJKN
+		WASDer,
+		ArrowsLP,
+		UHJKnm
 	}
 
 
@@ -50,7 +50,7 @@ namespace InputManager {
 
 				return Input.GetAxis("Horizontal_3");
 
-			case InputType.WASDSpace:
+			case InputType.WASDer:
 
 				if (Input.GetKey(KeyCode.A)) 
 				{
@@ -61,7 +61,7 @@ namespace InputManager {
 					return 0;
 				}
 
-			case InputType.ArrowsL:
+			case InputType.ArrowsLP:
 
 				if (Input.GetKey(KeyCode.LeftArrow)) 
 				{
@@ -72,7 +72,7 @@ namespace InputManager {
 					return 0;
 				}
 
-			case InputType.UHJKN:
+			case InputType.UHJKnm:
 			
 				if (Input.GetKey(KeyCode.H)) 
 				{
@@ -112,7 +112,7 @@ namespace InputManager {
 
 				return Input.GetAxis("Vertical_3");
 
-			case InputType.WASDSpace:
+			case InputType.WASDer:
 
 				if (Input.GetKey(KeyCode.S)) 
 				{
@@ -123,7 +123,7 @@ namespace InputManager {
 					return 0;
 				}
 
-			case InputType.ArrowsL:
+			case InputType.ArrowsLP:
 
 				if (Input.GetKey(KeyCode.DownArrow)) 
 				{
@@ -134,7 +134,7 @@ namespace InputManager {
 					return 0;
 				}
 
-			case InputType.UHJKN:
+			case InputType.UHJKnm:
 
 				if (Input.GetKey(KeyCode.J)) 
 				{
@@ -173,17 +173,58 @@ namespace InputManager {
 
 				return Input.GetButtonDown("Jump_3");
 
-			case InputType.WASDSpace:
+			case InputType.WASDer:
 
-				return Input.GetKey(KeyCode.Space);
+				return Input.GetKey(KeyCode.E);
 
-			case InputType.ArrowsL:
+			case InputType.ArrowsLP:
 
 				return Input.GetKey(KeyCode.L); 
 
-			case InputType.UHJKN:
+			case InputType.UHJKnm:
 
 				return Input.GetKey(KeyCode.N);
+
+			default:
+
+				Debug.Log("default hit for inputcontroller " + this.gameObject.name);
+				return false;
+
+			}
+		}
+
+		public bool SecondActionButtonPressed() {
+
+			if (!initialised) {
+				Debug.Log("player controls not initialised for player " + this.gameObject.name + ". Try initialising in Awake");
+				return false;
+			}
+
+			switch (_inputType) {
+
+			case InputType.JoystickOne:
+
+				return Input.GetButtonDown("Fire2_1");
+
+			case InputType.JoystickTwo:
+
+				return Input.GetButtonDown("Fire2_2");
+
+			case InputType.JoystickThree:
+
+				return Input.GetButtonDown("Fire2_3");
+
+			case InputType.WASDer:
+
+				return Input.GetKey(KeyCode.R);
+
+			case InputType.ArrowsLP:
+
+				return Input.GetKey(KeyCode.P); 
+
+			case InputType.UHJKnm:
+
+				return Input.GetKey(KeyCode.M);
 
 			default:
 
