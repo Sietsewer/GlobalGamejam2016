@@ -68,9 +68,9 @@ namespace Player {
 				_animator.SetFloat("Forward", Mathf.Clamp( Mathf.Abs( xAxis ) + Mathf.Abs( yAxis ), 0, 1));
 
 				if (xAxis < 0) {
-					transform.localRotation = Quaternion.Euler(0, 45, 0);
-				} else {
 					transform.localRotation = Quaternion.Euler(0, -135, 0);
+				} else {
+					transform.localRotation = Quaternion.Euler(0, 45, 0);
 				}
 
 				//player jumping
@@ -128,6 +128,14 @@ namespace Player {
 					inventory = null;
 
 					Debug.Log("Collectible delivered");
+				}
+				break;
+			case "shaman":
+				if (inventory != null && !Shaman) {
+
+					inventory.gameObject.SetActive(true);
+					inventory == null;
+
 				}
 				break;
 			}
