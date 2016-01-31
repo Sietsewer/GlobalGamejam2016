@@ -442,6 +442,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &175878
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 442220}
+  m_Layer: 8
+  m_Name: effectPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &176024
 GameObject:
   m_ObjectHideFlags: 1
@@ -940,6 +955,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 494904}
   m_RootOrder: 1
+--- !u!4 &442220
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 175878}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.99}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 444382}
+  m_RootOrder: 4
 --- !u!4 &442330
 Transform:
   m_ObjectHideFlags: 1
@@ -983,13 +1010,14 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 195464}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071067}
-  m_LocalPosition: {x: -2, y: 1, z: 1}
+  m_LocalPosition: {x: -1, y: 2, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 402964}
   - {fileID: 450592}
   - {fileID: 449492}
   - {fileID: 449770}
+  - {fileID: 442220}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &446536
@@ -2699,6 +2727,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 197991e4896074e20966ab3b95b9d5c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  effectPoint: {fileID: 442220}
   linkedTiles: []
   NorthEast: {fileID: 0}
   SouthEast: {fileID: 0}
