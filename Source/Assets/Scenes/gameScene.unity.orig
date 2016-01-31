@@ -5013,13 +5013,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
+<<<<<<< HEAD
+--- !u!1 &1060729912
+=======
 --- !u!1 &1139625946
+>>>>>>> 07a85dcfff003d8fdbfa7202253e933e1320f261
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 4
   m_Component:
+<<<<<<< HEAD
+  - 224: {fileID: 1060729913}
+  m_Layer: 5
+  m_Name: PlayersResult
+=======
   - 4: {fileID: 1139625950}
   - 33: {fileID: 1139625949}
   - 64: {fileID: 1139625948}
@@ -5029,10 +5038,31 @@ GameObject:
   - 114: {fileID: 1139625953}
   m_Layer: 0
   m_Name: SpellCircle
+>>>>>>> 07a85dcfff003d8fdbfa7202253e933e1320f261
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
+<<<<<<< HEAD
+  m_IsActive: 1
+--- !u!224 &1060729913
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1060729912}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1232041405}
+  m_RootOrder: 1
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+=======
   m_IsActive: 0
 --- !u!23 &1139625947
 MeshRenderer:
@@ -6710,6 +6740,7 @@ CapsuleCollider:
   m_Height: 6.61
   m_Direction: 1
   m_Center: {x: 0, y: 3.25, z: 0}
+>>>>>>> 07a85dcfff003d8fdbfa7202253e933e1320f261
 --- !u!1001 &1230663804
 Prefab:
   m_ObjectHideFlags: 0
@@ -6903,6 +6934,8 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 250850803}
+<<<<<<< HEAD
+=======
     - target: {fileID: 186988, guid: b114ef5b34f1b4a46a8f1e413a5d9614, type: 2}
       propertyPath: m_IsActive
       value: 1
@@ -6923,6 +6956,7 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+>>>>>>> 07a85dcfff003d8fdbfa7202253e933e1320f261
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b114ef5b34f1b4a46a8f1e413a5d9614, type: 2}
   m_IsPrefabParent: 0
