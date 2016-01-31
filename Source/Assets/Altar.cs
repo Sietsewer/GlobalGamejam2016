@@ -26,6 +26,7 @@ public class Altar : MonoBehaviour {
 
 			break;
 		case Diamond.red:
+			Debug.Log ("debug");
 
 			if (material.mainTexture != BlueTotem) {
 				material.mainTexture = RedTotem;

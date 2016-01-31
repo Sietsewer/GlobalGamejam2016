@@ -40,7 +40,7 @@ public class StunSpell : MonoBehaviour {
 
 	private IEnumerator spellCoroutine (){
 		if (player.currentTile.tag == saferoomTag) {
-			return true;
+			yield break;
 		}
 
 		// Start cast period.

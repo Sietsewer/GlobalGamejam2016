@@ -8,6 +8,9 @@ namespace Player {
 	[RequireComponent (typeof (InputController))]
 	public class PlayerController : MonoBehaviour {
 
+		private StunSpell stunSpell;
+		private BlockSpell blockSpell;
+
 		public Tile currentTile;
 
 		[HideInInspector]
@@ -34,6 +37,13 @@ namespace Player {
 		public void Activate (InputController inputController) {
 			_inputController = inputController;
 			activated = true;
+		}
+
+		void Awake (){
+			if (Shaman) {
+				blockSpell = GetComponent<BlockSpell> ();
+				stunSpell = GetComponent<StunSpell> ();
+			}
 		}
 			
 		public bool justEnteredDoor = false;
@@ -86,6 +96,19 @@ namespace Player {
 				//player hoebahoeba
 				if (_inputController.ActionButtonPressed () ) {
 					_animator.SetBool("Crazy", true);
+					if (Shaman) {
+						stunSpell.tryCast ();
+					}
+				} else {
+					_animator.SetBool("Crazy", false);
+				}
+
+				//player also crazy
+				if (_inputController.SecondActionButtonPressed () ) {
+					_animator.SetBool("Crazy", true);
+					if (Shaman) {
+						blockSpell.tryCast ();
+					}
 				} else {
 					_animator.SetBool("Crazy", false);
 				}
@@ -135,7 +158,7 @@ namespace Player {
 			case "shaman":
 				if (inventory != null && !Shaman) {
 
-					inventory.gameObject.SetActive(true);
+					inventory.SetActive(true);
 					inventory = null;
 
 				}

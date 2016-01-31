@@ -78,9 +78,9 @@ namespace InputManager {
 				}
 			}
 
-			availableInputs.Add(InputType.ArrowsL);
-			availableInputs.Add(InputType.UHJKN);
-			availableInputs.Add(InputType.WASDSpace);
+			availableInputs.Add(InputType.ArrowsLP);
+			availableInputs.Add(InputType.UHJKnm);
+			availableInputs.Add(InputType.WASDer);
 
 			Debug.Log("amount of available inputs: " + availableInputs.Count.ToString());
 //			NotSelectedInputs = new List<InputType>(availableInputs);
