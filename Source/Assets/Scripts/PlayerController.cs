@@ -130,6 +130,14 @@ namespace Player {
 					Debug.Log("Collectible delivered");
 				}
 				break;
+			case "shaman":
+				if (inventory != null && !Shaman) {
+
+					inventory.gameObject.SetActive(true);
+					inventory == null;
+
+				}
+				break;
 			}
 		}
 
