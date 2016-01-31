@@ -8,6 +8,7 @@ TagManager:
   - collectible
   - altar
   - shaman
+  - saferoom
   layers:
   - Default
   - TransparentFX

@@ -95,9 +95,10 @@ GameObject:
   - 54: {fileID: 5483890}
   - 114: {fileID: 11479942}
   - 136: {fileID: 13658548}
+  - 114: {fileID: 11420304}
   m_Layer: 0
   m_Name: Player_Shaman_sprite
-  m_TagString: Untagged
+  m_TagString: shaman
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -421,8 +422,23 @@ MonoBehaviour:
   speed: 1
   jumpForce: 200
   inventory: {fileID: 0}
+  stunned: 0
   Shaman: 1
   justEnteredDoor: 0
+--- !u!114 &11420304
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 157174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6ac6dc9c79e04d3e9bce1edec1727cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stunEffectPrefab: {fileID: 105526, guid: 485938fad53c44ef6b5360ca8896f554, type: 2}
+  coolDown: 2
+  duration: 3
 --- !u!114 &11479942
 MonoBehaviour:
   m_ObjectHideFlags: 1
