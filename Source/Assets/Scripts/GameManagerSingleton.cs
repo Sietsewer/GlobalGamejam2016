@@ -92,7 +92,7 @@ public class GameManagerSingleton : MonoBehaviour {
 
 		switch (winner) {
 		case Winner.Players:
-			resultText.text = "The Players Win!";
+			resultText.text = "The Inca's Win!";
 			playerResult.SetActive(true);
 			break;
 		case Winner.Shaman:
